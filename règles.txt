@@ -1,0 +1,4 @@
+Jeu de carte en mode rogue like (infini avec des choses aléatoires à chaque niveau)
+On dit « bataille » quand 2 cartes sont de même valeur. Dans ce cas, on rejoue chacun une autre carte. La carte la plus forte emporte alors toute la levée additionnée.E
+Au fur et à mesure que vous gagnez , la difficulté du jeu augmente de 2x a chaque <Bataille> jusqu'a la défaite.
+Pour avoir plus de cartes haute vous devez avoir au minimum gagnez une < Bataille > , ainsi vous obtenez les cartes les plus hautes de votre adversaire 

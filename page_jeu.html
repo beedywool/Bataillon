@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div class="frame frame-background">
+        <div class="deck-ennemi">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+
+        </div>
+        <div class="vies-ennemi">
+            <img class="asset-vie" src="Assets/Vie.png">
+            <img class="asset-vie" src="Assets/Vie.png">
+            <img class="asset-vie" src="Assets/Vie.png">
+        </div>
+
+        <div class="plateau">
+            <div class="emplacement-carte plateau-carte-gauche">
+
+            </div>
+            <div class="emplacement-carte plateau-carte-droite">
+
+            </div>
+        </div>
+
+        <div class="vies-joueur" style="justify-content: end;">
+            <img class="asset-vie" src="Assets/Vie.png">
+            <img class="asset-vie" src="Assets/Vie.png">
+            <img class="asset-vie" src="Assets/Vie.png">
+        </div>
+        <div class="deck-joueur">
+            <img id="carte-joueur-1" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-2" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-3" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-4" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-5" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-6" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-7" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-8" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-9" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-10" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-11" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carte-joueur-12" class="asset-carte-joueur" src="Assets/Cartes/J3.png">    
+            <img id="carte-joueur-13" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+
+        </div>
+    </div>
+</body>
+
+<script>
+    const numeroCarte = ['2.', '3.', '4.', '5.', '6.', '7.', '8.', '9.', '10.', 'J', 'Q', 'K', 'A.'];
+    const typeCarte = ['2', '4', '5', '7'];
+
+    //Génération des cartes des joueurs
+    let carteJoueur1 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur2 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur3 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur4 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur5 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur6 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur7 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur8 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur9 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur10 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur11 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur12 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteJoueur13 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+
+    //Génération des cartes des ennemis
+    let carteEnnemi1 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi2 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi3 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi4 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi5 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi6 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi7 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi8 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi9 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi10 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi11 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi12 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    let carteEnnemi13 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+
+    //Affichage des cartes des joueurs
+    document.getElementById("carte-joueur-1").src = "Assets/Cartes/" + carteJoueur1 + ".png";
+    document.getElementById("carte-joueur-2").src = "Assets/Cartes/" + carteJoueur2 + ".png";
+    document.getElementById("carte-joueur-3").src = "Assets/Cartes/" + carteJoueur3 + ".png";
+    document.getElementById("carte-joueur-4").src = "Assets/Cartes/" + carteJoueur4 + ".png";
+    document.getElementById("carte-joueur-5").src = "Assets/Cartes/" + carteJoueur5 + ".png";
+    document.getElementById("carte-joueur-6").src = "Assets/Cartes/" + carteJoueur6 + ".png";
+    document.getElementById("carte-joueur-7").src = "Assets/Cartes/" + carteJoueur7 + ".png";
+    document.getElementById("carte-joueur-8").src = "Assets/Cartes/" + carteJoueur8 + ".png";
+    document.getElementById("carte-joueur-9").src = "Assets/Cartes/" + carteJoueur9 + ".png";
+    document.getElementById("carte-joueur-10").src = "Assets/Cartes/" + carteJoueur10 + ".png";
+    document.getElementById("carte-joueur-11").src = "Assets/Cartes/" + carteJoueur11 + ".png";
+    document.getElementById("carte-joueur-12").src = "Assets/Cartes/" + carteJoueur12 + ".png";
+    document.getElementById("carte-joueur-13").src = "Assets/Cartes/" + carteJoueur13 + ".png";
+</script>

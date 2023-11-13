@@ -1,0 +1,130 @@
+@import url('https://fonts.cdnfonts.com/css/so-bad');
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.titre {
+    font-family: 'So Bad', sans-serif;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+}
+
+.frame {
+    height: 550px;
+    width: 700px;
+    overflow: hidden;
+}
+.frame-background {
+    background-color: wheat
+}
+
+.centered-container {
+    align-content: center;
+    display: flex;
+}
+
+.button {
+    background-color: white;
+    font-size: 25px;
+    letter-spacing: 2px;
+    border: black solid 1px;
+    padding: 10px;
+    font-family: 'So Condensed', sans-serif;
+    font-weight: bold;
+}
+.button:hover {
+    background-color: gray;
+}
+
+.centered-button-div {
+    margin: auto;
+    display: block;
+}
+
+.texte-regles {
+    color: white;
+    font-size:25px; 
+    text-align: center;
+    font-family: 'So Bad', sans-serif;
+    
+
+    
+}
+
+.flex {
+    display: flex;
+}
+
+.deck-ennemi {
+    height: 150px;
+    width: 92.9%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -24px;
+}
+.deck-joueur {
+    height: 125px;
+    width: 99.8%;
+    display: flex;
+    margin-left: 50px;
+}
+.plateau {
+    height: 190px;
+    width: 99.8%;
+    background-color: blue;
+    border: black solid 1px;
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.vies-ennemi {
+    height: 40px;
+    width: 99.8%;
+    background-color: gray;
+    border: black solid 1px;
+    display: flex;
+}
+.vies-joueur {
+    height: 40px;
+    width: 99.8%;
+    background-color: gray;
+    border: black solid 1px;
+    display: flex;
+}
+
+.asset-vie {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+}
+.asset-carte-joueur {
+    width: 100px;
+    height: 150px;
+    display: inline-block;
+    margin-left: -50px;
+}
+.asset-carte-joueur:hover {
+    cursor: pointer;
+    margin-top: 5px;
+    border: orangered solid 5px;
+    border-radius: 15px;
+}
+.asset-carte-ennemi {
+    width: 100px;
+    height: 150px;
+    display: inline-block;
+    margin-right: -50px;
+}
+
+.emplacement-carte {
+    width: 102px;
+    height: 152px;
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+    border: black solid 3px;
+    border-radius: 15px;
+}
