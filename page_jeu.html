@@ -5,6 +5,22 @@
 
 <body>
     <div class="frame frame-background">
+        <div id="endScreen" class="frame">
+            <h1 class="texte-ecran-fin titre-ecran-fin">Partie gagnée !</h1>
+            <div id="choixBonus">
+                <button id="buttonBonus1" class="button centered-button-div"><img id="imageButtonBonus1" src="Assets/Aucun_bonus.png"></button>
+                <button id="buttonBonus2" class="button centered-button-div"><img id="imageButtonBonus2"src="Assets/Bonus2.png"></button>
+                <button id="buttonBonus3" class="button centered-button-div"><img id="imageButtonBonus3"src="Assets/Bonus3.png"></button>
+            </div>
+            <img id="imageFinNiveau" src="Assets/Image_fin_niveau_victoire.png">
+            <p class="texte-ecran-fin" style="margin-top: -25px;">Avancée d'un étage</p>
+        </div>
+        <div id="endScreenDefaite" class="frame">
+            <h1 class="texte-ecran-fin titre-ecran-fin">Partie perdue...</h1>
+            <div id="choixBonus">
+                <button onclick="window.location.reload()" id="buttonRejouer" class="button centered-button-div" style="margin-top: 100px;">Recommencer</button>
+            </div>
+        </div>
         <div class="deck-ennemi">
             <img id="carteEnnemi13" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
             <img id="carteEnnemi12" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
@@ -35,11 +51,11 @@
 
         <div class="plateau">
             <div class="emplacement-carte plateau-carte-gauche">
-                <img id="carte-gauche" class="asset-carte" src="Assets/Cartes/Back1.png">
+                <img id="carte-gauche" class="asset-carte" src="Assets/Cartes/Centered_card.png">
             </div>
             <h1 id="etatPartie" class="etat-partie">Etat de la partie</h1>
             <div class="emplacement-carte plateau-carte-droite">
-                <img id="carte-droite" class="asset-carte" src="Assets/Cartes/Back1.png">
+                <img id="carte-droite" class="asset-carte" src="Assets/Cartes/Centered_card.png">
             </div>
         </div>
 
@@ -74,25 +90,34 @@
 </body>
 
 <script>
+    //Musique de fond
+    var musiqueFond = new Audio('Music/Bg_music.ogg');
+    musiqueFond.loop = true;
+    musiqueFond.volume = 0.5;
+    setTimeout(() => musiqueFond.play(), 1000);
+
     //Délaration des variables
     const numeroCarte = ['2.', '3.', '4.', '5.', '6.', '7.', '8.', '9.', '10.', 'J', 'Q', 'K', 'A.'];
     const typeCarte = ['2', '4', '5', '7'];
 
-    nombreCartesJoueur = 1;
-    window.valCarteJoueur1 = "0", window.valCarteJoueur2 = "0", window.valCarteJoueur3 = "0", window.valCarteJoueur4 = "0", window.valCarteJoueur5 = "4.2", window.valCarteJoueur6 = "0", window.valCarteJoueur7 = "0", window.valCarteJoueur8 = "0", window.valCarteJoueur9 = "0", window.valCarteJoueur10 = "0", window.valCarteJoueur11 = "0", window.valCarteJoueur12 = "0", window.valCarteJoueur13 = "0";
-    nombreCartesEnnemi = 1;
-    window.valCarteEnnemi1 = "0", window.valCarteEnnemi2 = "0", window.valCarteEnnemi3 = "0", window.valCarteEnnemi4 = "4.2", window.valCarteEnnemi5 = "0", window.valCarteEnnemi6 = "0", window.valCarteEnnemi7 = "0", window.valCarteEnnemi8 = "0", window.valCarteEnnemi9 = "0", window.valCarteEnnemi10 = "0", window.valCarteEnnemi11 = "0", window.valCarteEnnemi12 = "0", window.valCarteEnnemi13 = "0";
-    valeurCarteGauche = "0";
-    valeurCarteDroite = "0";
+    let nombreCartesJoueur = 0;
+    window.valCarteJoueur1 = "0", window.valCarteJoueur2 = "0", window.valCarteJoueur3 = "0", window.valCarteJoueur4 = "0", window.valCarteJoueur5 = "0", window.valCarteJoueur6 = "0", window.valCarteJoueur7 = "0", window.valCarteJoueur8 = "0", window.valCarteJoueur9 = "0", window.valCarteJoueur10 = "0", window.valCarteJoueur11 = "0", window.valCarteJoueur12 = "0", window.valCarteJoueur13 = "0";
+    let nombreCartesEnnemi = 0;
+    window.valCarteEnnemi1 = "0", window.valCarteEnnemi2 = "0", window.valCarteEnnemi3 = "0", window.valCarteEnnemi4 = "0", window.valCarteEnnemi5 = "0", window.valCarteEnnemi6 = "0", window.valCarteEnnemi7 = "0", window.valCarteEnnemi8 = "0", window.valCarteEnnemi9 = "0", window.valCarteEnnemi10 = "0", window.valCarteEnnemi11 = "0", window.valCarteEnnemi12 = "0", window.valCarteEnnemi13 = "0";
+    let valeurCarteGauche = "0";
+    let valeurCarteDroite = "0";
 
-    maximumViesJoueur = 3;
-    nombreViesJoueur = 3;
-    maximumViesEnnemi = 2;
-    nombreViesEnnemi = 2;
+    let maximumViesJoueur = 3;
+    let nombreViesJoueur = 3;
+    let maximumViesEnnemi = 2;
+    let nombreViesEnnemi = 2;
 
-    difficulte = 1;
-    niveau = 1;
-    priorite = "Joueur";
+    let difficulte = 3;
+    let niveau = 1;
+    let priorite = "Joueur";
+
+    let tourJoueur = 1;
+    let tourEnnemi = 0;
 
     //Génération des cartes des joueurs
     function generateRandomPlayerCard(cardNumber) {
@@ -134,6 +159,7 @@
                 }
             }
         }
+        //Vies ennemi
         for (let i = 1; i <= 7; i++) {
             let lifeElement = document.getElementById("vieEnnemi" + i);
             if (i <= nombreViesEnnemi) {
@@ -146,9 +172,12 @@
                 }
             }
         }
+        if (nombreViesJoueur > maximumViesJoueur) {
+            nombreViesJoueur = maximumViesJoueur;
+        }
     }
 
-    //Fonctions d'affichage et d'invisibilité des cartes des joueurs
+    //Fonctions d'affichage et d'invis ibilité des cartes des joueurs
     function updateCardImages(cardToUpdate) {
         if (cardToUpdate == 0) {
             //Affichage de l'image de la carte
@@ -184,7 +213,7 @@
     }
     //Réorganiser les cartes
     function cardOrderUpdate() {
-        for (let i = 1; i <= 13; i++) {
+         for (let i = 1; i <= 13; i++) {
                 if (window['valCarteJoueur' + i] == "0") {
                     for (let j = i; j <= 12; j++) {
                         window['valCarteJoueur' + j] = window['valCarteJoueur' + (j + 1)];
@@ -235,20 +264,22 @@
     //Pioche de cartes
     function piocheDeCarte(nombreDeCartesAPiocher, joueurQuiPioche) {
         if (joueurQuiPioche == "Joueur") {
-            for (let i = nombreCartesJoueur+1; i < nombreDeCartesAPiocher+nombreCartesJoueur+1 && i <= 13; i++) {
-                generateRandomPlayerCard(i);
-                updateCardImages(i);
+            for (let i = 1; i <= nombreDeCartesAPiocher && nombreCartesJoueur <= 13; i++) {
+                generateRandomPlayerCard(nombreCartesJoueur+1);
+                updateCardImages(nombreCartesJoueur);
             }
         } else {
-            for (let i = nombreCartesEnnemi+1; i < nombreDeCartesAPiocher+nombreCartesEnnemi+1 && i <= 13; i++) {
-                generateRandomEnnemyCard(i);
-                updateCardImages(i);
+            for (let i = 1; i <= nombreDeCartesAPiocher && nombreViesEnnemi <= 13; i++) {
+                generateRandomEnnemyCard(nombreCartesEnnemi+1);
+                updateCardImages(nombreCartesEnnemi);
             }
         }
     }
 
     //Nettoyage du plateau et début d'une nouvelle manche
     function clearPlateau() {
+        let typeCarteGauche = valeurCarteGauche.charAt(valeurCarteGauche.length-1);
+        let typeCarteDroite = valeurCarteDroite.charAt(valeurCarteDroite.length-1);
         //Gestion d'un cas d'égalité ou le jeu doit rendre leurs cartes aux joueurs
         document.getElementById("etatPartie").style.visibility = "hidden";
         if (document.getElementById("etatPartie").innerHTML == "Egalité") {
@@ -258,22 +289,116 @@
             nombreCartesEnnemi++;
             updateCardImages(0);
         }
+        //Gestion des bonus | Joueur
+        if (document.getElementById("etatPartie").innerHTML == "Victoire") {
+            //Bonus Coeur | Récupérer une vie
+            if (typeCarteGauche == "2") {
+                if (nombreViesJoueur < maximumViesJoueur) {
+                    nombreViesJoueur++;
+                    updateLivesCounters();
+                }
+            }
+            //Bonus Pique | Faire perdre une vie supplémentaire à l'adversaire
+            if (typeCarteGauche == "5") {
+                nombreViesEnnemi --;
+                updateLivesCounters();
+            }
+        }
+        //Gestion des bonus | Ennemi
+        if (document.getElementById("etatPartie").innerHTML == "Défaite") {
+            //Bonus Coeur | Récupérer une vie
+            if (typeCarteDroite == "2") {
+                if (nombreViesEnnemi < maximumViesEnnemi) {
+                    nombreViesEnnemi++;
+                    updateLivesCounters();
+                }
+            }
+            //Bonus Pique | Faire perdre une vie supplémentaire à l'adversaire
+            if (typeCarteDroite == "5") {
+                nombreViesJoueur --;
+                updateLivesCounters();
+            }
+        }
+        //Bonus trèfle | Piocher 2 cartes
+        if (document.getElementById("etatPartie").innerHTML != "Egalité") {
+            if (typeCarteGauche == "7") {
+                piocheDeCarte(2, "Joueur");
+            }
+            if (typeCarteDroite == "7") {
+                piocheDeCarte(2, "Ennemi");
+            }
+        }
         //Rendre les cartes du milieu invisibles à nouveau
-        document.getElementById("carte-gauche").src = "Assets/Cartes/Back1.png";
-        document.getElementById("carte-droite").src = "Assets/Cartes/Back1.png";
+        document.getElementById("carte-gauche").src = "Assets/Cartes/Centered_card.png";
+        document.getElementById("carte-droite").src = "Assets/Cartes/Centered_card.png";
+        //Vérifier si un joueur n'a plus de cartes
+        if (nombreCartesJoueur == 0) {
+            nombreViesJoueur -= 1;
+            updateLivesCounters();
+            piocheDeCarte(3, "Joueur");
+        }
+        if (nombreCartesEnnemi == 0) {
+            nombreViesEnnemi -= 1;
+            updateLivesCounters();
+            piocheDeCarte(3, "Ennemi");
+        }
+        updateCardImages(0);
         //Définir le tour de jeu
-        if (priorite == "Joueur") {
+        if (priorite == "Joueur" && nombreViesEnnemi > 0 && nombreViesJoueur > 0) {
             tourJoueur = 1;
             tourEnnemi = 0;
-        } else {
+        } 
+        if (priorite == "Ennemi" && nombreViesEnnemi > 0 && nombreViesJoueur > 0) {
             tourJoueur = 0;
             tourEnnemi = 1;
         }
+        if (nombreViesEnnemi <= 0) {
+            document.getElementById("endScreen").style.visibility = "visible";
+            //Faire apparaître le bonus de priorité
+            if (niveau > 4 && priorite == "Joueur") {
+                document.getElementById("imageButtonBonus2").src = "Assets/Bonus4.png";
+            } else {
+                document.getElementById("imageButtonBonus2").src = "Assets/Bonus2.png";
+            }
+            //Faire apparaître le bonus de déblocage de vie tous les 2 niveaux
+            if (niveau%2 == 0) {
+                document.getElementById("imageButtonBonus1").src = "Assets/Bonus1.png";
+            } else {
+                document.getElementById("imageButtonBonus1").src = "Assets/Aucun_bonus.png";
+            }
+        }
+        if (nombreViesJoueur <= 0) {
+            document.getElementById("endScreenDefaite").style.visibility = "visible";
+        }
     }
+    //Clic sur les bonus et changement de niveau
+    document.getElementById("buttonBonus1").addEventListener("click", function() {
+        if (niveau%2 == 0) {
+            maximumViesJoueur++;
+            nombreViesJoueur++;
+            updateLivesCounters();
+            newLevel();
+        }
+    })
+    document.getElementById("buttonBonus2").addEventListener("click", function() {
+        if (niveau > 4 && priorite == "Joueur") {
+            priorite = "Ennemi";
+        } else {
+            piocheDeCarte(3, "Joueur");
+        }
+        newLevel();
+    })
+    document.getElementById("buttonBonus3").addEventListener("click", function() {
+        nombreViesJoueur+=2;
+        updateLivesCounters();
+        newLevel();
+    })
 
     //Comparaison des cartes 
     function cardCompare() {
     const specialCardValue = ['1', 'J', 'Q', 'K', 'A']
+    let typeCarteGauche = valeurCarteGauche.charAt(valeurCarteGauche.length-1);
+    let typeCarteDroite = valeurCarteDroite.charAt(valeurCarteDroite.length-1);
     let valeurCarteGaucheToCompare = valeurCarteGauche.substring(1, 0);
     let valeurCarteDroiteToCompare = valeurCarteDroite.substring(1, 0);
         //Mettre les bonnes valeurs | Carte Gauche
@@ -288,10 +413,16 @@
                 valeurCarteDroiteToCompare = i;
             }
         }
+        //Bonus Carreau | Réduire la valeur de la carte de l'adversaire de 1
+        if (typeCarteGauche == "4") {
+            valeurCarteDroiteToCompare -= 1;
+        }
+        if (typeCarteDroite == "4") {
+            valeurCarteGaucheToCompare -= 1;
+        }
         //Comparaison des valeurs | Carte du joueur est supérieure
         if (valeurCarteGaucheToCompare > valeurCarteDroiteToCompare) {
             nombreViesEnnemi -= 1;
-            console.log("Le joueur a gagné");
             updateLivesCounters();
             document.getElementById("etatPartie").innerHTML = "Victoire";
             setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
@@ -300,41 +431,57 @@
         //Comparaison des valeurs | Carte de la machine est supérieure
         if (valeurCarteGaucheToCompare < valeurCarteDroiteToCompare) {
             nombreViesJoueur -= 1;
-            console.log("Le joueur a perdu");
             updateLivesCounters();
             document.getElementById("etatPartie").innerHTML = "Défaite";
-            console.log(document.getElementById("etatPartie").innerHTML);
             setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
             setTimeout(clearPlateau, 2700);
         }
         if (valeurCarteGaucheToCompare == valeurCarteDroiteToCompare) {
-            console.log("Egalité");
-            console.log(valeurCarteGauche + '//' + valeurCarteDroite);
             document.getElementById("etatPartie").innerHTML = "Egalité";
-            console.log(document.getElementById("etatPartie").innerHTML);
             setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
             setTimeout(clearPlateau, 2700);
         }
     }
 
-    //Lancement d'une manche
-    function gameInit() {
-        if (difficulte == 1) {
-            for (let i = 1; i <= 3; i++) {
-                generateRandomEnnemyCard(i);
-            }
-            for (let i = 1; i <= 4; i++) {
-                generateRandomPlayerCard(i);
-            }
+    //Démarage d'un nouveau niveau
+    function newLevel() {
+        //Définition de la difficulté
+        if (niveau%2 == 0) {
+            maximumViesEnnemi++;
+            difficulte++;
         }
+        //Réinitialisation des cartes et des vies de la machine
+        nombreCartesEnnemi = 0;
+        piocheDeCarte(difficulte, "Ennemi");
+        nombreViesEnnemi = maximumViesEnnemi;
+        updateCardImages(0);
+        updateLivesCounters();
+        //Démarrage de la partie
+        niveau++;
+        document.getElementById("endScreen").style.visibility = "hidden";
+        if (priorite = "Joueur") {
+            tourJoueur = 1;
+            tourEnnemi = 0;
+        } else {
+            tourJoueur = 0;
+            tourEnnemi = 1;
+        }
+    } 
+
+    //Lancement du premier niveau
+    function gameInit() {
+        for (let i = 1; i <= 3; i++) {
+            generateRandomEnnemyCard(i);
+        }
+        for (let i = 1; i <= 4; i++) {
+            generateRandomPlayerCard(i);
+        }
+    tourJoueur = 1;
+    tourEnnemi = 0;
     updateCardImages(0);
     updateLivesCounters();
     }
 
     gameInit();
-
-    //Gestion des tours
-    let tourJoueur = 1;
-    let tourEnnemi = 0;
 
 </script>

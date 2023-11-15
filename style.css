@@ -163,4 +163,44 @@ html, body {
     background-color: gray;
 }
 
+#endScreen {
+    position: absolute;
+    background-color: #a89ba6;
+    visibility: hidden;
+    display: inline-block;
+   
+    
+}
+#endScreenDefaite {
+    position: absolute;
+    background-color: #a89ba6;
+    visibility: hidden;
+    display: inline-block;
+    
+}
+#imageFinNiveau {   
+    max-height: 30%;
+    margin: 0 auto;
+    display: block;
+}
+.texte-ecran-fin {
+    font-family: 'So Bad', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    letter-spacing: 2px;
+}
+.titre-ecran-fin {
+    font-size: 50px;
+    text-shadow: 4px 4px 4px black;
+    margin-top: 30px;
+}
+#choixBonus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+    margin-bottom: 20px;
+}
+
 /* Animations */
