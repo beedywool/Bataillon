@@ -1,4 +1,13 @@
-Jeu de carte en mode rogue like (infini avec des choses aléatoires à chaque niveau)
-On dit « bataille » quand 2 cartes sont de même valeur. Dans ce cas, on rejoue chacun une autre carte. La carte la plus forte emporte alors toute la levée additionnée.E
-Au fur et à mesure que vous gagnez , la difficulté du jeu augmente de 2x a chaque <Bataille> jusqu'a la défaite.
-Pour avoir plus de cartes haute vous devez avoir au minimum gagnez une < Bataille > , ainsi vous obtenez les cartes les plus hautes de votre adversaire 
+Bataillon est un jeu de carte dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez.
+A chaque victoire, un nouvel adversaire vous est présenté et vous pouvez choisir un bonus.
+
+Pour gagner une manche, il faut que votre carte soit supérieure à celle qui a été jouée par l'adversaire. (Le Valet vaut 11, la Dame 12, le Roi 13 et l'As 14.). Si c'est le cas, votre adversaire perd une vie. Dans le cas contraire, vous perdez une vie.
+En cas d'égalité, les 2 joueurs récupèrent leur carte.
+Dès qu'un joueur n'a plus de vies, il est éliminé. 
+Si un joueur est à court de cartes, il perd une vie et doit en piocher 3. 
+
+Chaque catégorie de carte à un bonus qui lui est propre. 
+Coeur : si une manche est remportée avec une carte de coeur, le gagnant récupère une vie. Vous ne pouvez pas avoir plus de vie que votre limite actuelle. 
+Carreau : si vous jouez une carte de carreau, la valeur de la carte de l'advsersaire est réduite de 1. 
+Pique : si une manche est remportée avec une carte de pique, le perdant perd 2 vies.
+Trèfle : si une carte de trèfle est jouée, le joueur peut piocher 2 cartes suppplémentaires. 

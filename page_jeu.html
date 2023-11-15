@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
@@ -6,106 +6,335 @@
 <body>
     <div class="frame frame-background">
         <div class="deck-ennemi">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
-            <img class="asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi13" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi12" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi11" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi10" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi9" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi8" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi7" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi6" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi5" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi4" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi3" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi2" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
+            <img id="carteEnnemi1" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
 
         </div>
-        <div class="vies-ennemi">
-            <img class="asset-vie" src="Assets/Vie.png">
-            <img class="asset-vie" src="Assets/Vie.png">
-            <img class="asset-vie" src="Assets/Vie.png">
+        <div class="container-vies-bonus">
+            <div class="vies-ennemi">
+                <img id="vieEnnemi7" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieEnnemi6" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieEnnemi5" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieEnnemi4" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieEnnemi3" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieEnnemi2" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieEnnemi1" class="asset-vie" src="Assets/Vie.png">
+            </div>
         </div>
 
         <div class="plateau">
             <div class="emplacement-carte plateau-carte-gauche">
-
+                <img id="carte-gauche" class="asset-carte" src="Assets/Cartes/Back1.png">
             </div>
+            <h1 id="etatPartie" class="etat-partie">Etat de la partie</h1>
             <div class="emplacement-carte plateau-carte-droite">
-
+                <img id="carte-droite" class="asset-carte" src="Assets/Cartes/Back1.png">
             </div>
         </div>
 
-        <div class="vies-joueur" style="justify-content: end;">
-            <img class="asset-vie" src="Assets/Vie.png">
-            <img class="asset-vie" src="Assets/Vie.png">
-            <img class="asset-vie" src="Assets/Vie.png">
+        <div class="container-vies-bonus">
+            <div class="vies-joueur" style="justify-content: end;">
+                <img id="vieJoueur1" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieJoueur2" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieJoueur3" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieJoueur4" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieJoueur5" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieJoueur6" class="asset-vie" src="Assets/Vie.png">
+                <img id="vieJoueur7" class="asset-vie" src="Assets/Vie.png">
+            </div>
         </div>
         <div class="deck-joueur">
-            <img id="carte-joueur-1" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-2" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-3" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-4" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-5" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-6" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-7" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-8" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-9" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-10" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-11" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
-            <img id="carte-joueur-12" class="asset-carte-joueur" src="Assets/Cartes/J3.png">    
-            <img id="carte-joueur-13" class="asset-carte-joueur" src="Assets/Cartes/J3.png">
+            <img id="carteJoueur1" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur2" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur3" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur4" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur5" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur6" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur7" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur8" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur9" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur10" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur11" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
+            <img id="carteJoueur12" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">    
+            <img id="carteJoueur13" class="asset-carte asset-carte-joueur" src="Assets/Cartes/J2.png">
 
         </div>
     </div>
 </body>
 
 <script>
+    //Délaration des variables
     const numeroCarte = ['2.', '3.', '4.', '5.', '6.', '7.', '8.', '9.', '10.', 'J', 'Q', 'K', 'A.'];
     const typeCarte = ['2', '4', '5', '7'];
 
+    nombreCartesJoueur = 1;
+    window.valCarteJoueur1 = "0", window.valCarteJoueur2 = "0", window.valCarteJoueur3 = "0", window.valCarteJoueur4 = "0", window.valCarteJoueur5 = "4.2", window.valCarteJoueur6 = "0", window.valCarteJoueur7 = "0", window.valCarteJoueur8 = "0", window.valCarteJoueur9 = "0", window.valCarteJoueur10 = "0", window.valCarteJoueur11 = "0", window.valCarteJoueur12 = "0", window.valCarteJoueur13 = "0";
+    nombreCartesEnnemi = 1;
+    window.valCarteEnnemi1 = "0", window.valCarteEnnemi2 = "0", window.valCarteEnnemi3 = "0", window.valCarteEnnemi4 = "4.2", window.valCarteEnnemi5 = "0", window.valCarteEnnemi6 = "0", window.valCarteEnnemi7 = "0", window.valCarteEnnemi8 = "0", window.valCarteEnnemi9 = "0", window.valCarteEnnemi10 = "0", window.valCarteEnnemi11 = "0", window.valCarteEnnemi12 = "0", window.valCarteEnnemi13 = "0";
+    valeurCarteGauche = "0";
+    valeurCarteDroite = "0";
+
+    maximumViesJoueur = 3;
+    nombreViesJoueur = 3;
+    maximumViesEnnemi = 2;
+    nombreViesEnnemi = 2;
+
+    difficulte = 1;
+    niveau = 1;
+    priorite = "Joueur";
+
     //Génération des cartes des joueurs
-    let carteJoueur1 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur2 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur3 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur4 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur5 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur6 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur7 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur8 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur9 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur10 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur11 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur12 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteJoueur13 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    function generateRandomPlayerCard(cardNumber) {
+        if (cardNumber == 0) {
+            for (let i = 1; i <= 13; i++) {
+                window['valCarteJoueur' + i] = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+                nombreCartesJoueur++;
+            }
+        } else {
+                window['valCarteJoueur' + cardNumber] = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+                nombreCartesJoueur++;
+            }
+        }
+    //Génération des cartes ennemis
+    function generateRandomEnnemyCard(cardNumber) {
+        if (cardNumber == 0) {
+            for (let i = 1; i <= 13; i++) {
+                window['valCarteEnnemi' + i] = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+                nombreCartesEnnemi++;
+            }
+        } else {
+                window['valCarteEnnemi' + cardNumber] = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+                nombreCartesEnnemi++;
+            }
+        }
 
-    //Génération des cartes des ennemis
-    let carteEnnemi1 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi2 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi3 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi4 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi5 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi6 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi7 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi8 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi9 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi10 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi11 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi12 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
-    let carteEnnemi13 = numeroCarte[Math.floor(Math.random() * numeroCarte.length)] + typeCarte[Math.floor(Math.random() * typeCarte.length)];
+    //Fonction d'affichage et de mise à jour des barres de vie
+    function updateLivesCounters() {
+        //Vies Joueur
+        for (let i = 1; i <= 7; i++) {
+            let lifeElement = document.getElementById("vieJoueur" + i);
+            if (i <= nombreViesJoueur) {
+                lifeElement.src = "Assets/Vie.png";
+            } else {
+                if (i <= maximumViesJoueur) {
+                    lifeElement.src = "Assets/Vie_perdue.png";
+                } else {
+                    lifeElement.src = "Assets/Vie_bloquée.png";
+                }
+            }
+        }
+        for (let i = 1; i <= 7; i++) {
+            let lifeElement = document.getElementById("vieEnnemi" + i);
+            if (i <= nombreViesEnnemi) {
+                lifeElement.src = "Assets/Vie.png";
+            } else {
+                if (i <= maximumViesEnnemi) {
+                    lifeElement.src = "Assets/Vie_perdue.png";
+                } else {
+                    lifeElement.src = "Assets/Vie_bloquée.png";
+                }
+            }
+        }
+    }
 
-    //Affichage des cartes des joueurs
-    document.getElementById("carte-joueur-1").src = "Assets/Cartes/" + carteJoueur1 + ".png";
-    document.getElementById("carte-joueur-2").src = "Assets/Cartes/" + carteJoueur2 + ".png";
-    document.getElementById("carte-joueur-3").src = "Assets/Cartes/" + carteJoueur3 + ".png";
-    document.getElementById("carte-joueur-4").src = "Assets/Cartes/" + carteJoueur4 + ".png";
-    document.getElementById("carte-joueur-5").src = "Assets/Cartes/" + carteJoueur5 + ".png";
-    document.getElementById("carte-joueur-6").src = "Assets/Cartes/" + carteJoueur6 + ".png";
-    document.getElementById("carte-joueur-7").src = "Assets/Cartes/" + carteJoueur7 + ".png";
-    document.getElementById("carte-joueur-8").src = "Assets/Cartes/" + carteJoueur8 + ".png";
-    document.getElementById("carte-joueur-9").src = "Assets/Cartes/" + carteJoueur9 + ".png";
-    document.getElementById("carte-joueur-10").src = "Assets/Cartes/" + carteJoueur10 + ".png";
-    document.getElementById("carte-joueur-11").src = "Assets/Cartes/" + carteJoueur11 + ".png";
-    document.getElementById("carte-joueur-12").src = "Assets/Cartes/" + carteJoueur12 + ".png";
-    document.getElementById("carte-joueur-13").src = "Assets/Cartes/" + carteJoueur13 + ".png";
+    //Fonctions d'affichage et d'invisibilité des cartes des joueurs
+    function updateCardImages(cardToUpdate) {
+        if (cardToUpdate == 0) {
+            //Affichage de l'image de la carte
+            for (let i = 1; i <= 13; i++) {
+                let cardElement = document.getElementById("carteJoueur" + i);
+                cardElement.src = "Assets/Cartes/" + window['valCarteJoueur' + i] + ".png";
+            }
+            //Visibilité des cartes
+            for (let i = 1; i <= 13; i++) {
+                let cardElement = document.getElementById("carteJoueur" + i);
+                let cardElementEnemy = document.getElementById("carteEnnemi" + i);
+                if (window['valCarteJoueur' + i] == "0") {
+                        cardElement.style.visibility = "hidden";
+                    } else {
+                        cardElement.style.visibility = "visible";
+                    }
+                if (window['valCarteEnnemi' + i] == "0") {
+                    cardElementEnemy.style.visibility = "hidden";
+                } else {
+                    cardElementEnemy.style.visibility = "visible";
+                }
+            }
+        }
+        else {
+            let cardElement = document.getElementById("carteJoueur" + cardToUpdate);
+            cardElement.src = "Assets/Cartes/" + window['valCarteJoueur' + cardToUpdate] + ".png";
+            if (window['valCarteJoueur' + cardToUpdate] == "0") {
+                cardElement.style.visibility = "hidden";
+            } else {
+                cardElement.style.visibility = "visible";
+            }
+        }
+    }
+    //Réorganiser les cartes
+    function cardOrderUpdate() {
+        for (let i = 1; i <= 13; i++) {
+                if (window['valCarteJoueur' + i] == "0") {
+                    for (let j = i; j <= 12; j++) {
+                        window['valCarteJoueur' + j] = window['valCarteJoueur' + (j + 1)];
+                    }
+                    window['valCarteJoueur13'] = "0";
+                }
+            }
+        updateCardImages(0);
+    }
+
+    //Placement d'une carte par l'ennemi
+    function enemyPlay() {
+        if (tourEnnemi == 1) {
+            document.getElementById("carte-droite").src = "Assets/Cartes/" + window['valCarteEnnemi' + nombreCartesEnnemi] + ".png";
+            tourEnnemi = 0;
+            valeurCarteDroite = window['valCarteEnnemi' + nombreCartesEnnemi];
+            window['valCarteEnnemi' + nombreCartesEnnemi] = "0";
+            nombreCartesEnnemi--;
+            cardOrderUpdate();
+            if (priorite == "Joueur") {
+                cardCompare();
+            }
+        }
+        
+    }
+
+    //Placement d'une carte par le joueur
+    document.addEventListener("click", function(clickedElement) {
+        let carteCliquee = clickedElement.target.id;
+            if (carteCliquee.startsWith("carteJoueur")) {
+                if (tourJoueur == 1 && window['valC' + carteCliquee.substring(1)] != "0") {
+                document.getElementById("carte-gauche").src = "Assets/Cartes/" + window['valC' + carteCliquee.substring(1)] + ".png";
+                tourJoueur = 0;
+                valeurCarteGauche = window['valC' + carteCliquee.substring(1)];
+                window['valC' + carteCliquee.substring(1)] = "0";
+                nombreCartesJoueur--;
+                cardOrderUpdate();
+                if (priorite == "Joueur") {
+                    tourEnnemi = 1;
+                    setTimeout(enemyPlay, 500);
+                } else {
+                    cardCompare();
+                }
+            }
+        }
+    })
+
+    //Pioche de cartes
+    function piocheDeCarte(nombreDeCartesAPiocher, joueurQuiPioche) {
+        if (joueurQuiPioche == "Joueur") {
+            for (let i = nombreCartesJoueur+1; i < nombreDeCartesAPiocher+nombreCartesJoueur+1 && i <= 13; i++) {
+                generateRandomPlayerCard(i);
+                updateCardImages(i);
+            }
+        } else {
+            for (let i = nombreCartesEnnemi+1; i < nombreDeCartesAPiocher+nombreCartesEnnemi+1 && i <= 13; i++) {
+                generateRandomEnnemyCard(i);
+                updateCardImages(i);
+            }
+        }
+    }
+
+    //Nettoyage du plateau et début d'une nouvelle manche
+    function clearPlateau() {
+        //Gestion d'un cas d'égalité ou le jeu doit rendre leurs cartes aux joueurs
+        document.getElementById("etatPartie").style.visibility = "hidden";
+        if (document.getElementById("etatPartie").innerHTML == "Egalité") {
+            window['valCarteJoueur' + (nombreCartesJoueur + 1)] = valeurCarteGauche;
+            nombreCartesJoueur++;
+            window['valCarteEnnemi' + (nombreCartesEnnemi + 1)] = valeurCarteDroite;
+            nombreCartesEnnemi++;
+            updateCardImages(0);
+        }
+        //Rendre les cartes du milieu invisibles à nouveau
+        document.getElementById("carte-gauche").src = "Assets/Cartes/Back1.png";
+        document.getElementById("carte-droite").src = "Assets/Cartes/Back1.png";
+        //Définir le tour de jeu
+        if (priorite == "Joueur") {
+            tourJoueur = 1;
+            tourEnnemi = 0;
+        } else {
+            tourJoueur = 0;
+            tourEnnemi = 1;
+        }
+    }
+
+    //Comparaison des cartes 
+    function cardCompare() {
+    const specialCardValue = ['1', 'J', 'Q', 'K', 'A']
+    let valeurCarteGaucheToCompare = valeurCarteGauche.substring(1, 0);
+    let valeurCarteDroiteToCompare = valeurCarteDroite.substring(1, 0);
+        //Mettre les bonnes valeurs | Carte Gauche
+        for (let i = 10; i <= 14; i++) {
+            if (valeurCarteGaucheToCompare == specialCardValue[i - 10]) {
+                valeurCarteGaucheToCompare = i;
+            }
+        }
+        //Mettre les bonnes valeurs | Carte Droite
+        for (let i = 10; i <= 14; i++) {
+            if (valeurCarteDroiteToCompare == specialCardValue[i - 10]) {
+                valeurCarteDroiteToCompare = i;
+            }
+        }
+        //Comparaison des valeurs | Carte du joueur est supérieure
+        if (valeurCarteGaucheToCompare > valeurCarteDroiteToCompare) {
+            nombreViesEnnemi -= 1;
+            console.log("Le joueur a gagné");
+            updateLivesCounters();
+            document.getElementById("etatPartie").innerHTML = "Victoire";
+            setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
+            setTimeout(clearPlateau, 2700);
+        }
+        //Comparaison des valeurs | Carte de la machine est supérieure
+        if (valeurCarteGaucheToCompare < valeurCarteDroiteToCompare) {
+            nombreViesJoueur -= 1;
+            console.log("Le joueur a perdu");
+            updateLivesCounters();
+            document.getElementById("etatPartie").innerHTML = "Défaite";
+            console.log(document.getElementById("etatPartie").innerHTML);
+            setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
+            setTimeout(clearPlateau, 2700);
+        }
+        if (valeurCarteGaucheToCompare == valeurCarteDroiteToCompare) {
+            console.log("Egalité");
+            console.log(valeurCarteGauche + '//' + valeurCarteDroite);
+            document.getElementById("etatPartie").innerHTML = "Egalité";
+            console.log(document.getElementById("etatPartie").innerHTML);
+            setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
+            setTimeout(clearPlateau, 2700);
+        }
+    }
+
+    //Lancement d'une manche
+    function gameInit() {
+        if (difficulte == 1) {
+            for (let i = 1; i <= 3; i++) {
+                generateRandomEnnemyCard(i);
+            }
+            for (let i = 1; i <= 4; i++) {
+                generateRandomPlayerCard(i);
+            }
+        }
+    updateCardImages(0);
+    updateLivesCounters();
+    }
+
+    gameInit();
+
+    //Gestion des tours
+    let tourJoueur = 1;
+    let tourEnnemi = 0;
+
 </script>

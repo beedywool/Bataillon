@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" href="Assets/Logo_site.png" />
+    <title>Bataillon</title>
+    <meta content="Bataillon" property="og:title" />
+    <meta content="Bataillon est un jeu de carte dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez." property="og:description" />
+    <meta content="https://guillome-mgn.github.io/Bataillon property=" property="og:url" />
+    <meta content="Assets/Logo_site.png" property="og:image" />
+    <meta content="#331028" data-react-helmet="true" name="theme-color" />
 </head>
 
 <body style="background-color: #331028">
     <h1 class="titre">Bataillon</h1>
-    <p style="text-align: center;"><iframe class="frame" src="titre_jeu.html"></iframe></p>
+    <p style="text-align: center;"><iframe class="frame" src="titre_jeu.html" style="position: relative; z-index: 2;"></iframe></p>
+    <img class="torch" src="Assets/Torche.gif" style="right: 0;">
+    <img class="torch" src="Assets/Torche.gif" style="left: 0;">
 
     <div class="centered-button-div" style="width:70%;">
-        <p class="texte-regles">Jeu de carte en mode rogue like (infini avec des choses aléatoires à chaque niveau).
-            On dit « bataille » quand 2 cartes sont de même valeur. Dans ce cas, on rejoue chacun une autre carte. La carte la plus forte remporte alors toute la levée additionnée.Et
-            Au fur et à mesure que vous gagnez , la difficulté du jeu augmente de 2x a chaque < Bataille > jusqu'a la défaite.
-            Pour avoir plus de cartes haute vous devez avoir au minimum gagné une < Bataille > , ainsi vous obtenez les cartes les plus hautes de votre adversaire. 
-            </p>
+        <p class="texte-regles">Bataillon est un jeu de carte dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez.<br>
+            A chaque victoire, un nouvel adversaire vous est présenté et vous pouvez choisir un bonus.<br><br>
+            
+            Pour gagner une manche, il faut que votre carte soit supérieure à celle qui a été jouée par l'adversaire. (Le Valet vaut 11, la Dame 12, le Roi 13 et l'As 14.). Si c'est le cas, votre adversaire perd une vie. Dans le cas contraire, vous perdez une vie.<br>
+            Dès qu'un joueur n'a plus de vies, il est éliminé.<br>
+            Si un joueur est à court de cartes, il perd une vie et doit en piocher 3.<br><br>
+            
+            Chaque catégorie de carte à un bonus qui lui est propre.<br>
+            Coeur : si une manche est remportée avec une carte de coeur, le gagnant récupère une vie. Vous ne pouvez pas avoir plus de vie que votre limite actuelle.<br>
+            Carreau : si vous jouez une carte de carreau, la valeur de la carte de l'advsersaire est réduite de 1.<br>
+            Pique : si une manche est remportée avec une carte de pique, le perdant perd 2 vies.<br>
+            Trèfle : si une carte de trèfle est jouée, le joueur peut piocher 2 cartes suppplémentaires. </p>
     </div>
 </body>
