@@ -4,30 +4,66 @@
     <link rel="icon" href="Assets/Logo_site.png" />
     <title>Bataillon</title>
     <meta content="Bataillon" property="og:title" />
-    <meta content="Bataillon est un jeu de carte dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez." property="og:description" />
+    <meta content="Bataillon est un jeu de carte inspiré de la bataille dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez." property="og:description" />
     <meta content="https://guillome-mgn.github.io/Bataillon property=" property="og:url" />
     <meta content="https://guillome-mgn.github.io/Bataillon/Assets/Logo_site.png" property="og:image" />
     <meta content="#331028" data-react-helmet="true" name="theme-color" />
 </head>
 
-<body style="background-color: #331028">
+<body style="background-image: url('Assets/Fond_index.png'); background-repeat: repeat">
     <h1 class="titre">Bataillon</h1>
-    <p style="text-align: center;"><iframe class="frame" src="titre_jeu.html" style="position: relative; z-index: 2;"></iframe></p>
+    <p style="text-align: center;"><iframe id="gameFrame" src="titre_jeu.html"></iframe></p>
     <img class="torch" src="Assets/Torche.gif" style="right: 0;">
     <img class="torch" src="Assets/Torche.gif" style="left: 0;">
 
+    <hr>
+
     <div class="centered-button-div" style="width:70%;">
-        <p class="texte-regles">Bataillon est un jeu de carte dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez.<br>
+        <h1 class="titre">Règles du jeu</h1>
+        <p class="texte-regles"><u>Bataillon</u> est un jeu de carte dans lequel vous devez progresser contre différents adversaires jusqu'à ce que vous perdiez.<br>
             A chaque victoire, un nouvel adversaire vous est présenté et vous pouvez choisir un bonus.<br><br>
             
-            Pour gagner une manche, il faut que votre carte soit supérieure à celle qui a été jouée par l'adversaire. (Le Valet vaut 11, la Dame 12, le Roi 13 et l'As 14.). Si c'est le cas, votre adversaire perd une vie. Dans le cas contraire, vous perdez une vie.<br>
+            Pour gagner une manche, il faut que votre carte soit supérieure à celle qui a été jouée par l'adversaire. <i>(Le Valet vaut 11, la Dame 12, le Roi 13 et l'As 14.)</i>. Si c'est le cas, votre adversaire perd une vie. Dans le cas contraire, vous perdez une vie.<br>
+            En cas d'égalité, les 2 joueurs récupèrent leur carte.<br>
             Dès qu'un joueur n'a plus de vies, il est éliminé.<br>
             Si un joueur est à court de cartes, il perd une vie et doit en piocher 3.<br><br>
             
-            Chaque catégorie de carte à un bonus qui lui est propre.<br>
-            Coeur : si une manche est remportée avec une carte de coeur, le gagnant récupère une vie. Vous ne pouvez pas avoir plus de vie que votre limite actuelle.<br>
-            Carreau : si vous jouez une carte de carreau, la valeur de la carte de l'advsersaire est réduite de 1.<br>
-            Pique : si une manche est remportée avec une carte de pique, le perdant perd 2 vies.<br>
-            Trèfle : si une carte de trèfle est jouée, le joueur peut piocher 2 cartes suppplémentaires. </p>
+            Chaque catégorie de carte à un bonus qui lui est propre.<p>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <div class="div-texte-image-regles">
+                    <img src="Assets/Cartes/Coeur.png" class="image-regles">
+                    <p class="texte-regles"><u>Coeur</u> : si une manche est remportée avec une carte de coeur, le gagnant récupère une vie. Vous ne pouvez pas avoir plus de vie que votre limite actuelle.</p>
+                </div>
+                <div class="div-texte-image-regles">
+                    <img src="Assets/Cartes/Carreau.png" class="image-regles">
+                    <p class="texte-regles"><u>Carreau</u> : si vous jouez une carte de carreau, la valeur de la carte de l'advsersaire est réduite de 1.</p>
+                </div>
+                <div class="div-texte-image-regles">
+                    <img src="Assets/Cartes/Pique.png" class="image-regles">
+                    <p class="texte-regles"><u>Pique</u> : si une manche est remportée avec une carte de pique, le perdant perd 2 vies.</p>
+                </div>
+                <div class="div-texte-image-regles">
+                    <img src="Assets/Cartes/Trèfle.png" class="image-regles">
+                    <p class="texte-regles"><u>Trèfle</u> : si une carte de trèfle est jouée, le joueur peut piocher 2 cartes suppplémentaires.</p>
+                </div>
+            </div>
     </div>
+
+    <hr>
+
+    <footer>
+        <p class="texte-regles" style="font-size: small;">Fait par : Emmanuel, Guillome et Ibrahima</p>
+    </footer>
+
 </body>
+
+<script>
+    ```window.addEventListener('resize', function() {
+        var width = window.innerWidth;
+        var height = window.innerHeight;
+        console.log('Width: ' + width + ', Height: ' + height);
+        var scaleFactor = (width / 1600);
+        console.log('Scale factor: ' + scaleFactor);
+    });
+    document.getElementById('gameFrame').style.transform = scale(2.0);```
+</script>

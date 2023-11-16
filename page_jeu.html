@@ -37,6 +37,7 @@
             <img id="carteEnnemi1" class="asset-carte asset-carte-ennemi" src="Assets/Cartes/Back1.png">
 
         </div>
+        <p id="bonusEnnemi" class="texte-plateau">Bonus</p>
         <div class="container-vies-bonus">
             <div class="vies-ennemi">
                 <img id="vieEnnemi7" class="asset-vie" src="Assets/Vie.png">
@@ -54,11 +55,13 @@
                 <img id="carte-gauche" class="asset-carte" src="Assets/Cartes/Centered_card.png">
             </div>
             <h1 id="etatPartie" class="etat-partie">Etat de la partie</h1>
+            <p id="niveauActuel" class="texte-plateau" style="margin-right: 590px;"></p>
             <div class="emplacement-carte plateau-carte-droite">
                 <img id="carte-droite" class="asset-carte" src="Assets/Cartes/Centered_card.png">
             </div>
         </div>
 
+        <p id="bonusJoueur" class="texte-plateau">Bonus de vie</p>
         <div class="container-vies-bonus">
             <div class="vies-joueur" style="justify-content: end;">
                 <img id="vieJoueur1" class="asset-vie" src="Assets/Vie.png">
@@ -90,10 +93,14 @@
 </body>
 
 <script>
-    //Musique de fond
-    var musiqueFond = new Audio('Music/Bg_music.ogg');
+    //Musique de fond et définitions des sons globaux
+    const musiqueFond = new Audio('Music/Bg_music.ogg');
     musiqueFond.loop = true;
     musiqueFond.volume = 0.5;
+
+    const bruitPoseCarte = new Audio('Music/Pose_carte.ogg');
+    bruitPoseCarte.volume = 0.7;
+
     setTimeout(() => musiqueFond.play(), 1000);
 
     //Délaration des variables
@@ -177,7 +184,7 @@
         }
     }
 
-    //Fonctions d'affichage et d'invis ibilité des cartes des joueurs
+    //Fonctions d'affichage et d'invisibilité des cartes des joueurs
     function updateCardImages(cardToUpdate) {
         if (cardToUpdate == 0) {
             //Affichage de l'image de la carte
@@ -232,9 +239,13 @@
             valeurCarteDroite = window['valCarteEnnemi' + nombreCartesEnnemi];
             window['valCarteEnnemi' + nombreCartesEnnemi] = "0";
             nombreCartesEnnemi--;
+            bruitPoseCarte.play();
             cardOrderUpdate();
             if (priorite == "Joueur") {
                 cardCompare();
+            }
+            if (priorite == "Ennemi") {
+                tourJoueur = 1;
             }
         }
         
@@ -250,6 +261,7 @@
                 valeurCarteGauche = window['valC' + carteCliquee.substring(1)];
                 window['valC' + carteCliquee.substring(1)] = "0";
                 nombreCartesJoueur--;
+                bruitPoseCarte.play();
                 cardOrderUpdate();
                 if (priorite == "Joueur") {
                     tourEnnemi = 1;
@@ -331,6 +343,9 @@
         //Rendre les cartes du milieu invisibles à nouveau
         document.getElementById("carte-gauche").src = "Assets/Cartes/Centered_card.png";
         document.getElementById("carte-droite").src = "Assets/Cartes/Centered_card.png";
+        //Effacer les textes de bonus
+        document.getElementById("bonusJoueur").style.visibility = "hidden";
+        document.getElementById("bonusEnnemi").style.visibility = "hidden";
         //Vérifier si un joueur n'a plus de cartes
         if (nombreCartesJoueur == 0) {
             nombreViesJoueur -= 1;
@@ -351,9 +366,11 @@
         if (priorite == "Ennemi" && nombreViesEnnemi > 0 && nombreViesJoueur > 0) {
             tourJoueur = 0;
             tourEnnemi = 1;
+            setTimeout(enemyPlay, 500);
         }
         if (nombreViesEnnemi <= 0) {
             document.getElementById("endScreen").style.visibility = "visible";
+            document.getElementById("niveauActuel").style.visibility = "hidden";
             //Faire apparaître le bonus de priorité
             if (niveau > 4 && priorite == "Joueur") {
                 document.getElementById("imageButtonBonus2").src = "Assets/Bonus4.png";
@@ -369,6 +386,7 @@
         }
         if (nombreViesJoueur <= 0) {
             document.getElementById("endScreenDefaite").style.visibility = "visible";
+            document.getElementById("niveauActuel").style.visibility = "hidden";
         }
     }
     //Clic sur les bonus et changement de niveau
@@ -416,9 +434,22 @@
         //Bonus Carreau | Réduire la valeur de la carte de l'adversaire de 1
         if (typeCarteGauche == "4") {
             valeurCarteDroiteToCompare -= 1;
+            document.getElementById("bonusJoueur").innerHTML = "Carreau | Valeur ennemi -1";
+            document.getElementById("bonusJoueur").style.visibility = "visible";
         }
         if (typeCarteDroite == "4") {
             valeurCarteGaucheToCompare -= 1;
+            document.getElementById("bonusEnnemi").innerHTML = "Carreau | Valeur ennemi -1";
+            document.getElementById("bonusEnnemi").style.visibility = "visible";
+        }
+        //Bonus trèfle texte 
+        if (typeCarteGauche == "7") {
+            document.getElementById("bonusJoueur").innerHTML = "Trèfle | +2 cartes";
+            document.getElementById("bonusJoueur").style.visibility = "visible";
+        }
+        if (typeCarteDroite == "7") {
+            document.getElementById("bonusEnnemi").innerHTML = "Trèfle | +2 cartes";
+            document.getElementById("bonusEnnemi").style.visibility = "visible";
         }
         //Comparaison des valeurs | Carte du joueur est supérieure
         if (valeurCarteGaucheToCompare > valeurCarteDroiteToCompare) {
@@ -427,6 +458,14 @@
             document.getElementById("etatPartie").innerHTML = "Victoire";
             setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
             setTimeout(clearPlateau, 2700);
+            if (typeCarteGauche == "2") {
+                document.getElementById("bonusJoueur").innerHTML = "Coeur | +1 vie";
+                document.getElementById("bonusJoueur").style.visibility = "visible";
+            }
+            if (typeCarteGauche == "5") {
+                document.getElementById("bonusJoueur").innerHTML = "Pique | -1 vie ennemi";
+                document.getElementById("bonusJoueur").style.visibility = "visible";
+            }
         }
         //Comparaison des valeurs | Carte de la machine est supérieure
         if (valeurCarteGaucheToCompare < valeurCarteDroiteToCompare) {
@@ -435,6 +474,14 @@
             document.getElementById("etatPartie").innerHTML = "Défaite";
             setTimeout(() => document.getElementById("etatPartie").style.visibility = "visible", 700);
             setTimeout(clearPlateau, 2700);
+            if (typeCarteDroite == "2") {
+                document.getElementById("bonusEnnemi").innerHTML = "Coeur | +1 vie";
+                document.getElementById("bonusEnnemi").style.visibility = "visible";
+            }
+            if (typeCarteDroite == "5") {
+                document.getElementById("bonusEnnemi").innerHTML = "Pique | -1 vie ennemi";
+                document.getElementById("bonusEnnemi").style.visibility = "visible";
+            }
         }
         if (valeurCarteGaucheToCompare == valeurCarteDroiteToCompare) {
             document.getElementById("etatPartie").innerHTML = "Egalité";
@@ -447,10 +494,17 @@
     function newLevel() {
         //Définition de la difficulté
         if (niveau%2 == 0) {
-            maximumViesEnnemi++;
-            difficulte++;
+            if (maximumViesEnnemi < 7) {
+                maximumViesEnnemi++;
+            }
+            if (difficulte < 13) {
+                difficulte++;
+            }
         }
         //Réinitialisation des cartes et des vies de la machine
+        for (let i = 1; i <= 13; i++) {
+            window['valCarteEnnemi' + i] = "0";
+        }
         nombreCartesEnnemi = 0;
         piocheDeCarte(difficulte, "Ennemi");
         nombreViesEnnemi = maximumViesEnnemi;
@@ -459,13 +513,16 @@
         //Démarrage de la partie
         niveau++;
         document.getElementById("endScreen").style.visibility = "hidden";
-        if (priorite = "Joueur") {
+        if (priorite == "Joueur") {
             tourJoueur = 1;
             tourEnnemi = 0;
         } else {
             tourJoueur = 0;
             tourEnnemi = 1;
+            enemyPlay();
         }
+        document.getElementById("niveauActuel").innerHTML = "Etage<br>" + niveau;
+        document.getElementById("niveauActuel").style.visibility = "visible";
     } 
 
     //Lancement du premier niveau
@@ -480,6 +537,7 @@
     tourEnnemi = 0;
     updateCardImages(0);
     updateLivesCounters();
+    document.getElementById("niveauActuel").innerHTML = "Etage<br>" + niveau;
     }
 
     gameInit();
